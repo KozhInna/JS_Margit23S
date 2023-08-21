@@ -43,7 +43,7 @@ switch (season) {
 } */
 
 //THIRD - salary calculator
-let moneyPerHour = Number(prompt('How much do you earn per hour?'));
+/** let moneyPerHour = Number(prompt('How much do you earn per hour?'));
 let hoursPerDay = Number(prompt('How many hour did you work?'));
 
 console.log(moneyPerHour, hoursPerDay);
@@ -58,4 +58,28 @@ if (hoursPerDay <= 7) {
       moneyPerHour * 1.5 * 2 +
       moneyPerHour * 2 * (hoursPerDay - 9)
   );
+} **/
+
+//THIRD - salary calculator code modified
+let moneyPerHour = Number(prompt('How much do you earn per hour?'));
+let hoursPerDay = Number(prompt('How many hour did you work?'));
+
+// console.log(moneyPerHour, hoursPerDay);
+
+let salary;
+let basicSalary = 7 * moneyPerHour;
+let halfIncresedSalary =
+  7 * moneyPerHour + moneyPerHour * 1.5 * (hoursPerDay - 7);
+let doubleIncreasedSalary =
+  moneyPerHour * 7 +
+  moneyPerHour * 1.5 * 2 +
+  moneyPerHour * 2 * (hoursPerDay - 9);
+
+if (hoursPerDay <= 7) {
+  salary = basicSalary;
+} else if (hoursPerDay > 7 && hoursPerDay <= 9) {
+  salary = halfIncresedSalary;
+} else if (hoursPerDay > 9) {
+  salary = doubleIncreasedSalary;
 }
+console.log(`You have earned ${salary}`);
