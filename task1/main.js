@@ -1,1 +1,2 @@
-alert("Hello, World!")
+'use strict';
+alert('Hello, World!');
