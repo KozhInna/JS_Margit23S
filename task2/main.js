@@ -42,7 +42,7 @@ switch (season) {
     break;
 } */
 
-//THIRD - salary calculator
+//THIRD - 1) salary calculator
 /** let moneyPerHour = Number(prompt('How much do you earn per hour?'));
 let hoursPerDay = Number(prompt('How many hour did you work?'));
 
@@ -60,26 +60,153 @@ if (hoursPerDay <= 7) {
   );
 } **/
 
-//THIRD - salary calculator code modified
-let moneyPerHour = Number(prompt('How much do you earn per hour?'));
-let hoursPerDay = Number(prompt('How many hour did you work?'));
+//THIRD - 2) salary calculator code modified
+// function salaryCalc() {
+//   let moneyPerHour = Number(prompt('How much do you earn per hour?'));
+//   let hoursPerDay = Number(prompt('How many hour did you work?'));
 
 // console.log(moneyPerHour, hoursPerDay);
 
-let salary;
-let basicSalary = 7 * moneyPerHour;
-let halfIncresedSalary =
-  7 * moneyPerHour + moneyPerHour * 1.5 * (hoursPerDay - 7);
-let doubleIncreasedSalary =
-  moneyPerHour * 7 +
-  moneyPerHour * 1.5 * 2 +
-  moneyPerHour * 2 * (hoursPerDay - 9);
+//   let salary;
+//   let basicSalary = 7 * moneyPerHour;
+//   let halfIncresedSalary =
+//     7 * moneyPerHour + moneyPerHour * 1.5 * (hoursPerDay - 7);
+//   let doubleIncreasedSalary =
+//     moneyPerHour * 7 +
+//     moneyPerHour * 1.5 * 2 +
+//     moneyPerHour * 2 * (hoursPerDay - 9);
 
-if (hoursPerDay <= 7) {
-  salary = basicSalary;
-} else if (hoursPerDay > 7 && hoursPerDay <= 9) {
-  salary = halfIncresedSalary;
-} else if (hoursPerDay > 9) {
-  salary = doubleIncreasedSalary;
-}
-console.log(`You have earned ${salary}`);
+//   if (hoursPerDay <= 7) {
+//     salary = basicSalary;
+//   } else if (hoursPerDay > 7 && hoursPerDay <= 9) {
+//     salary = halfIncresedSalary;
+//   } else if (hoursPerDay > 9) {
+//     salary = doubleIncreasedSalary;
+//   }
+//   console.log(`You have earned ${salary}`);
+// }
+// salaryCalc();
+
+//THIRD - 3) salary calculator code modified
+// function salaryCalc() {
+//   let moneyPerHour = Number(prompt('How much do you earn per hour?'));
+//   let hoursPerDay = Number(prompt('How many hour did you work?'));
+
+//   // console.log(moneyPerHour, hoursPerDay);
+
+//   let salary;
+//   let basicSalary = 7 * moneyPerHour;
+//   let halfIncresedSalary =
+//     7 * moneyPerHour + moneyPerHour * 1.5 * (hoursPerDay - 7);
+//   let doubleIncreasedSalary =
+//     moneyPerHour * 7 +
+//     moneyPerHour * 1.5 * 2 +
+//     moneyPerHour * 2 * (hoursPerDay - 9);
+
+//   if (hoursPerDay <= 7) {
+//     salary = basicSalary;
+//   } else if (hoursPerDay <= 9) {
+//     salary = halfIncresedSalary;
+//   } else {
+//     salary = doubleIncreasedSalary;
+//   }
+//   console.log(`You have earned ${salary}`);
+// }
+// salaryCalc();
+
+//Odd and even numbers - task random number
+// First option
+
+/* const calcRandomNumber = () => {
+  const num1 = Number(prompt('Type your first number'));
+  const num2 = Number(prompt('Type your second number'));
+  const num3 = Number(prompt('Type your third number'));
+  let sum;
+  let multipl;
+
+  if (num1 < 0 && num2 < 0 && num3 < 0) {
+    console.log('only negatives');
+  } else if (num1 >= 0 && num2 >= 0 && num3 >= 0) {
+    sum = num1 + num2 + num3;
+    multipl = num1 * num2 * num3;
+    console.log(
+      `Your numbers are ${num1}, ${num2}, ${num3}, so their sum is ${sum} and their multiplication is ${multipl}`
+    );
+  } else {
+    sum = num1 + num2 + num3;
+    console.log(
+      `Your numbers are ${num1}, ${num2}, ${num3}, so their sum is ${sum}`
+    );
+  }
+};
+calcRandomNumber(); */
+
+// Second option
+/* const calcRandomNumber = () => {
+  const num1 = Number(prompt('Type your first number'));
+  const num2 = Number(prompt('Type your second number'));
+  const num3 = Number(prompt('Type your third number'));
+  const sum = num1 + num2 + num3;
+  const multipl = num1 * num2 * num3;
+
+  if (num1 < 0 && num2 < 0 && num3 < 0) {
+    console.log('only negatives');
+  } else if (num1 >= 0 && num2 >= 0 && num3 >= 0) {
+    console.log(
+      `Your numbers are ${num1}, ${num2}, ${num3}, so their sum is `,
+      sum,
+      'and their multiplication is ',
+      multipl
+    );
+  } else {
+    sum = num1 + num2 + num3;
+    console.log(
+      `Your numbers are ${num1}, ${num2}, ${num3}, so their sum is `,
+      sum
+    );
+  }
+};
+calcRandomNumber(); */
+
+//Task - Odd or even
+// First variant
+/* const checkNum = () => {
+  const num = Number(prompt("What's your number?"));
+
+  if (num >= 0 && num % 2 === 0) {
+    console.log(`Number ${num} is even`);
+  } else if (num > 0 && num % 2 !== 0) {
+    console.log(`Number ${num} is odd`);
+  } else if (num < 0) {
+    console.log('Please enter a positive number');
+    const num = Number(prompt("What's your number?"));
+    if (num > 0 && num % 2 === 0) {
+      console.log(`Number ${num} is even`);
+    } else {
+      console.log(`Number ${num} is odd`);
+    }
+  }
+};
+checkNum(); */
+
+// Second variant
+const checkNum = () => {
+  const num = Number(prompt("What's your number?"));
+
+  if (num >= 0) {
+    if (num % 2 === 0) {
+      console.log(`Number ${num} is even`);
+    } else {
+      console.log(`Number ${num} is odd`);
+    }
+  } else {
+    console.log('Please enter a positive number');
+    const num = Number(prompt("What's your number?"));
+    if (num % 2 === 0) {
+      console.log(`Number ${num} is even`);
+    } else {
+      console.log(`Number ${num} is odd`);
+    }
+  }
+};
+checkNum();
