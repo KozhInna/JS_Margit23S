@@ -190,7 +190,7 @@ calcRandomNumber(); */
 checkNum(); */
 
 // Second variant
-const checkNum = () => {
+/* const checkNum = () => {
   const num = Number(prompt("What's your number?"));
 
   if (num >= 0) {
@@ -209,4 +209,73 @@ const checkNum = () => {
     }
   }
 };
-checkNum();
+checkNum(); */
+
+//Task - Odd or even
+// Second.1 variant with loop - do...while
+/* const checkNum = () => {
+  let num;
+  do {
+    num = Number(prompt("What's your number?"));
+    if (num < 0) {
+      alert('Give positive number');
+    } else if (num >= 0 && num % 2 === 0) {
+      console.log(`Number ${num} is even`);
+    } else {
+      console.log(`Number ${num} is odd`);
+    }
+  } while (num < 0);
+};
+checkNum();*/
+
+//Task - Odd or even
+//Second.2 variant with loop - do...while
+/* const checkNum = () => {
+  let num;
+  do {
+    num = Number(prompt("What's your number?"));
+    if (num >= 0) {
+      if (num % 2 === 0) {
+        console.log(`Number ${num} is even`);
+      } else {
+      console.log(`Number ${num} is odd`);
+    }
+  } while (num <= 0);
+
+
+};
+checkNum(); */
+
+//Task - Odd or even
+// Third variant with loop - while
+/* const checkNum = () => {
+  let num = 0;
+  while (num <= 0) {
+    num = Number(prompt("What's your number?"));
+  }
+
+  if (num >= 0 && num % 2 === 0) {
+    console.log(`Number ${num} is even`);
+  } else {
+    console.log(`Number ${num} is odd`);
+  }
+};
+checkNum(); */
+
+/* TRY - FOR loop
+
+//Task - Odd or even
+// Third variant with loop - for
+const checkNum = () => {
+  let num;
+  for (num = 0; num !== 0; ) {
+    num = Number(prompt("What's your number?"));
+  }
+
+  if (num >= 0 && num % 2 === 0) {
+    console.log(`Number ${num} is even`);
+  } else {
+    console.log(`Number ${num} is odd`);
+  }
+};
+checkNum();*/
