@@ -1,3 +1,6 @@
+
+"use strict";
+
 //Decision making task
 /* - Define a variable named `userName` and set its value to an empty string.
 -Make condition which checks the value of userNameand returns ”Hello, userName” if there is name and it returns just “Hello” when it is empty string
