@@ -1,4 +1,3 @@
-
 "use strict";
 
 //Decision making task
@@ -59,6 +58,8 @@ const randonQuestion = () => {
     case 10:
       console.log("Not the right time, patience will bring better results.");
       break;
+    default:
+      return 0;
   }
 };
 
