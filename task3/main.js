@@ -124,21 +124,20 @@ randonQuestion(); */
 // 2) add addEventListener() - which is the method
 // 3) in addEventListener("click") - send a type of event
 // 4) write a function as a 2nd argument of addEventListener() - to specify what to do as the Event happens
-document.querySelector('.btn').addEventListener('click', function () {
-  //stop after 1 click
-  /* this.disabled = true; */
 
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+document.querySelector('.btn').addEventListener('click', function () {
   const name = document.querySelector('#firstName').value;
   const question = document.querySelector('#question').value;
 
-  const randomNumber = Math.floor(Math.random() * 10) + 1;
   let answerText;
   let greeting;
 
-  let decicionStatements = randomNumber;
-  // or condition can be just - "if (question)"
+  // or condition can be just - "if (question)" or "if (!question)
+
   if (question.length > 0) {
-    switch (decicionStatements) {
+    switch (randomNumber) {
       case 1:
         answerText = 'The stars say yes, go for it!';
         break;
@@ -171,7 +170,7 @@ document.querySelector('.btn').addEventListener('click', function () {
         break;
     }
   } else {
-    answerText = 'Please enter your question';
+    answerText = 'Please enter your question first❗️';
   }
 
   if (name.length > 0) {
@@ -185,4 +184,12 @@ document.querySelector('.btn').addEventListener('click', function () {
 /* document.querySelector('#answer').textContent = 'Ups';
 console.log(document.querySelector('#answer').textContent);
 document.querySelector('#firstName').value = 'Inna';
-console.log(document.querySelector('#firstName').value); */
+console.log(document.querySelector('#firstName').value);
+
+document.querySelector('.btn').addEventListener('click', function () {
+  document.querySelector('#firstName').value = 'asdfsdf';
+});
+
+document.querySelector('.btn').addEventListener('click', function () {
+  console.log(document.querySelector('#firstName').value);
+}); */
