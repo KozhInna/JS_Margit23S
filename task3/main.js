@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //Decision making task
 /* - Define a variable named `userName` and set its value to an empty string.
@@ -120,13 +120,16 @@ randonQuestion(); */
 
 // solution with addEventListener(need to add id="answer" in HTML)
 
-document.querySelector(".btn").addEventListener("click", function () {
+// 1) select the element where you want the Event happen
+// 2) add addEventListener() - which is the method
+// 3) in addEventListener("click") - send a type of event
+// 4) write a function as a 2nd argument of addEventListener() - to specify what to do as the Event happens
+document.querySelector('.btn').addEventListener('click', function () {
   //stop after 1 click
   /* this.disabled = true; */
 
-  const name = document.querySelector("#firstName").value;
-  const question = document.querySelector("#question").value;
-  const answer = document.querySelector("#answer");
+  const name = document.querySelector('#firstName').value;
+  const question = document.querySelector('#question').value;
 
   const randomNumber = Math.floor(Math.random() * 10) + 1;
   let answerText;
@@ -137,38 +140,38 @@ document.querySelector(".btn").addEventListener("click", function () {
   if (question.length > 0) {
     switch (decicionStatements) {
       case 1:
-        answerText = "The stars say yes, go for it!";
+        answerText = 'The stars say yes, go for it!';
         break;
       case 2:
-        answerText = "Trust your instincts and take the leap.";
+        answerText = 'Trust your instincts and take the leap.';
         break;
       case 3:
-        answerText = "Hmm, better try again later.";
+        answerText = 'Hmm, better try again later.';
         break;
       case 4:
-        answerText = "Consider all options before making a move.";
+        answerText = 'Consider all options before making a move.';
         break;
       case 5:
-        answerText = "Outlook is bright, proceed with confidence.";
+        answerText = 'Outlook is bright, proceed with confidence.';
         break;
       case 6:
-        answerText = "Seek advice from a trusted friend before deciding.";
+        answerText = 'Seek advice from a trusted friend before deciding.';
         break;
       case 7:
-        answerText = "Signs point to unexpected opportunities.";
+        answerText = 'Signs point to unexpected opportunities.';
         break;
       case 8:
         answerText = "It's a toss-up, make a choice and see what happens.";
         break;
       case 9:
-        answerText = "Take a step back and reassess before moving forward.";
+        answerText = 'Take a step back and reassess before moving forward.';
         break;
       case 10:
-        answerText = "Not the right time, patience will bring better results.";
+        answerText = 'Not the right time, patience will bring better results.';
         break;
     }
   } else {
-    answerText = "Please enter your question";
+    answerText = 'Please enter your question';
   }
 
   if (name.length > 0) {
@@ -176,5 +179,10 @@ document.querySelector(".btn").addEventListener("click", function () {
   } else {
     greeting = `Hello.`;
   }
-  answer.textContent = `${greeting} ${answerText}`;
+  document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
 });
+
+/* document.querySelector('#answer').textContent = 'Ups';
+console.log(document.querySelector('#answer').textContent);
+document.querySelector('#firstName').value = 'Inna';
+console.log(document.querySelector('#firstName').value); */
