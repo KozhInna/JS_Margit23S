@@ -4,26 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Decision making task</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Unbounded:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&family=Lato&family=Unbounded:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Decision making app</title>
   </head>
   <body>
-    <h1>Decision making app</h1>
+    <div class="container">
+      <div class="form-wrap">
+        <h2>What bothers you?</h2>
 
-    <h2>What bothers you?</h2>
+        <div>
+          <label for="firstName">What is your name?</label>
+          <input id="firstName" placeholder="e.g. Inna" />
+        </div>
+        <div>
+          <label for="question">Please type your question below</label>
+          <input
+            id="question"
+            type="text"
+            placeholder="e.g. Will I become a web developer?"
+          />
+        </div>
 
-    <div>
-      <label for="firstName">What is your name?</label>
-      <input id="firstName" />
+        <button type="button" class="btn">Give me an answer</button>
+
+        <p id="answer">Here you'll see the answer</p>
+      </div>
+
+      <script src="main.js"></script>
     </div>
-    <div>
-      <label for="question">Please type your question below</label>
-      <input id="question" type="text" />
-    </div>
-
-    <button type="button" class="btn">Show me the answer</button>
-
-    <p id="answer">Here you'll see the answer</p>
-
-    <script src="main.js"></script>
   </body>
 </html>

@@ -124,19 +124,19 @@ randonQuestion(); */
 // 2) add addEventListener() - which is the method
 // 3) in addEventListener("click") - send a type of event
 // 4) write a function as a 2nd argument of addEventListener() - to specify what to do as the Event happens
-
 const randomNumber = Math.floor(Math.random() * 10) + 1;
 
 document.querySelector('.btn').addEventListener('click', function () {
-  const name = document.querySelector('#firstName').value;
-  const question = document.querySelector('#question').value;
+  let name = document.querySelector('#firstName').value;
+  let question = document.querySelector('#question').value;
 
   let answerText;
   let greeting;
 
+  /* First senario - 1 person - 1 question */
   // or condition can be just - "if (question)" or "if (!question)
-
   if (question.length > 0) {
+    console.log(`first ${randomNumber}`);
     switch (randomNumber) {
       case 1:
         answerText = 'The stars say yes, go for it!';
@@ -174,11 +174,15 @@ document.querySelector('.btn').addEventListener('click', function () {
   }
 
   if (name.length > 0) {
+    name = name.toUpperCase();
     greeting = `Hello, ${name}.`;
+    document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
+    document.querySelector('#answer').style.color = '#66FF00';
   } else {
-    greeting = `Hello.`;
+    greeting = 'Hello.';
+    document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
+    document.querySelector('#answer').style.color = '#66FF00';
   }
-  document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
 });
 
 /* document.querySelector('#answer').textContent = 'Ups';

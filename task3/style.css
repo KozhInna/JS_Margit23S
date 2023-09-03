@@ -1,20 +1,66 @@
+* {
+  margin: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgb(75, 75, 152);
+  font-family: 'Kanit', sans-serif;
+  background-color: rgba(97, 97, 153);
   color: bisque;
 }
+h2 {
+  font-family: 'Unbounded', sans-serif;
+}
+
 input,
 button {
   font-family: inherit;
   font-size: inherit;
 }
+::placeholder {
+  opacity: 0.4;
+}
 .btn {
   background-color: bisque;
+  width: 60%;
   padding: 4px 10px;
   margin: 15px 0;
+  border: none;
+}
+.btn:hover {
+  background-color: rgb(46, 12, 88);
+  color: bisque;
+  text-transform: uppercase;
 }
 
 label,
 input {
   display: block;
+}
+
+.container {
+  width: 330px;
+  margin: 100px auto;
+}
+
+input {
+  padding: 3px 3px;
+}
+.form-wrap div {
+  margin: 20px 0;
+}
+.form-wrap {
+  text-align: center;
+  padding: 10px;
+}
+.form-wrap input {
+  width: 100%;
+}
+.form-wrap label {
+  text-align: left;
+  margin-bottom: 5px;
+}
+.form-wrap input {
+  margin-bottom: 20px;
 }
