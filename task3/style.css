@@ -7,10 +7,11 @@
 body {
   font-family: 'Kanit', sans-serif;
   background-color: rgba(97, 97, 153);
-  color: bisque;
+  color: #ffe4c4;
 }
 h2 {
   font-family: 'Unbounded', sans-serif;
+  margin-bottom: 30px;
 }
 
 input,
@@ -28,10 +29,20 @@ button {
   margin: 15px 0;
   border: none;
 }
+.again {
+  background-color: bisque;
+  padding: 4px 10px;
+  margin: 15px 0;
+  border: none;
+}
 .btn:hover {
   background-color: rgb(46, 12, 88);
   color: bisque;
   text-transform: uppercase;
+}
+.again:hover {
+  background-color: rgb(46, 12, 88);
+  color: bisque;
 }
 
 label,
@@ -41,7 +52,7 @@ input {
 
 .container {
   width: 330px;
-  margin: 100px auto;
+  margin: 150px auto 50px auto;
 }
 
 input {
@@ -63,4 +74,8 @@ input {
 }
 .form-wrap input {
   margin-bottom: 20px;
+  line-height: 1.5;
+}
+#answer {
+  text-align: center;
 }

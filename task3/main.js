@@ -4,14 +4,12 @@
 /* - Define a variable named `userName` and set its value to an empty string.
 -Make condition which checks the value of userNameand returns ”Hello, userName” if there is name and it returns just “Hello” when it is empty string
 -Create variable userQuestionand assign a string which represent the question user ask. 
--Log user name and question in console */
-
-/* -Generate a random number from 1-10 and store that value in variable randomNumber
+-Log user name and question in console
+-Generate a random number from 1-10 and store that value in variable randomNumber
 -Create a variable decicionStatements which holds cases for each random number (1-10)
 -Log in the console the answer to the question */
 
 // function gives random answer to random questions
-
 /* const randonQuestion = () => {
     const userName = prompt("What's your name?");
 
@@ -67,7 +65,7 @@
 
 randonQuestion(); */
 
-// solution with onclick (need to add onclick=function_name() in HTML)
+// solution_1 with onclick (needs to add onclick=function_name() in HTML)
 
 /* const randomAnswer = () => {
   const question = document.querySelector("#question").value;
@@ -118,13 +116,14 @@ randonQuestion(); */
   }
 }; */
 
-// solution with addEventListener(need to add id="answer" in HTML)
+// solution_2 with addEventListener(needs to add id="answer" in HTML)
 
 // 1) select the element where you want the Event happen
 // 2) add addEventListener() - which is the method
 // 3) in addEventListener("click") - send a type of event
 // 4) write a function as a 2nd argument of addEventListener() - to specify what to do as the Event happens
-const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+let randomNumber = Math.floor(Math.random() * 10) + 1;
 
 document.querySelector('.btn').addEventListener('click', function () {
   let name = document.querySelector('#firstName').value;
@@ -133,8 +132,8 @@ document.querySelector('.btn').addEventListener('click', function () {
   let answerText;
   let greeting;
 
-  /* First senario - 1 person - 1 question */
-  // or condition can be just - "if (question)" or "if (!question)
+  /* When a person has 1 question */
+  // or condition can be set - "if (question)" or "if (!question)
   if (question.length > 0) {
     console.log(`first ${randomNumber}`);
     switch (randomNumber) {
@@ -169,6 +168,7 @@ document.querySelector('.btn').addEventListener('click', function () {
         answerText = 'Not the right time, patience will bring better results.';
         break;
     }
+    // no input question
   } else {
     answerText = 'Please enter your question first❗️';
   }
@@ -177,23 +177,27 @@ document.querySelector('.btn').addEventListener('click', function () {
     name = name.toUpperCase();
     greeting = `Hello, ${name}.`;
     document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
-    document.querySelector('#answer').style.color = '#66FF00';
+    document.querySelector('#answer').style.color = '#171614';
+    document.querySelector('#answer').style.fontFamily =
+      'Permanent Marker, cursive';
+    document.querySelector('#answer').style.fontSize = '18px';
+    document.querySelector('#answer').style.lineHeight = '1.7';
   } else {
     greeting = 'Hello.';
     document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
-    document.querySelector('#answer').style.color = '#66FF00';
+    document.querySelector('#answer').style.color = '#171614';
+    document.querySelector('#answer').style.fontFamily =
+      'Permanent Marker, cursive';
+    document.querySelector('#answer').style.fontSize = '18px';
+    document.querySelector('#answer').style.lineHeight = '1.7';
   }
 });
+/* When a person has several questions - use Ask btn */
+document.querySelector('.again').addEventListener('click', function () {
+  randomNumber = Math.floor(Math.random() * 10) + 1;
+  document.querySelector('#question').value = '';
 
-/* document.querySelector('#answer').textContent = 'Ups';
-console.log(document.querySelector('#answer').textContent);
-document.querySelector('#firstName').value = 'Inna';
-console.log(document.querySelector('#firstName').value);
-
-document.querySelector('.btn').addEventListener('click', function () {
-  document.querySelector('#firstName').value = 'asdfsdf';
+  document.querySelector('#answer').textContent = "Here you'll see the answer";
+  document.querySelector('#answer').style.fontFamily = 'Kanit';
+  document.querySelector('#answer').style.color = '#ffe4c4';
 });
-
-document.querySelector('.btn').addEventListener('click', function () {
-  console.log(document.querySelector('#firstName').value);
-}); */
