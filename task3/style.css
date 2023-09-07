@@ -6,8 +6,12 @@
 
 body {
   font-family: 'Kanit', sans-serif;
-  background-color: rgba(97, 97, 153);
-  color: #ffe4c4;
+  background-image: url('/img/future.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #0363a3;
 }
 h2 {
   font-family: 'Unbounded', sans-serif;
@@ -23,26 +27,26 @@ button {
   opacity: 0.4;
 }
 .btn {
-  background-color: bisque;
+  background-color: rgb(255, 184, 82);
   width: 60%;
   padding: 4px 10px;
   margin: 15px 0;
   border: none;
 }
 .again {
-  background-color: bisque;
+  background-color: #ffb852;
   padding: 4px 10px;
   margin: 15px 0;
   border: none;
 }
 .btn:hover {
-  background-color: rgb(46, 12, 88);
-  color: bisque;
+  background-color: #f0a335;
+  color: #fff;
   text-transform: uppercase;
 }
 .again:hover {
-  background-color: rgb(46, 12, 88);
-  color: bisque;
+  background-color: #f0a335;
+  color: #fff;
 }
 
 label,
@@ -51,8 +55,12 @@ input {
 }
 
 .container {
-  width: 330px;
-  margin: 150px auto 50px auto;
+  width: 400px;
+  height: 400px;
+  padding: 20px 10px;
+  margin: 100px auto 50px auto;
+  border: 3px solid #444;
+  background-color: rgba(151, 191, 218, 0.8);
 }
 
 input {
@@ -62,8 +70,11 @@ input {
   margin: 20px 0;
 }
 .form-wrap {
+  width: 350px;
   text-align: center;
+  margin: 0 auto;
   padding: 10px;
+  /* border: 1px solid black; */
 }
 .form-wrap input {
   width: 100%;
@@ -78,4 +89,5 @@ input {
 }
 #answer {
   text-align: center;
+  color: #0363a3;
 }

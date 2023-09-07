@@ -177,7 +177,7 @@ document.querySelector('.btn').addEventListener('click', function () {
     name = name.toUpperCase();
     greeting = `Hello, ${name}.`;
     document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
-    document.querySelector('#answer').style.color = '#171614';
+    document.querySelector('#answer').style.color = '#503b2e';
     document.querySelector('#answer').style.fontFamily =
       'Permanent Marker, cursive';
     document.querySelector('#answer').style.fontSize = '18px';
@@ -185,7 +185,7 @@ document.querySelector('.btn').addEventListener('click', function () {
   } else {
     greeting = 'Hello.';
     document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
-    document.querySelector('#answer').style.color = '#171614';
+    document.querySelector('#answer').style.color = '#503b2e';
     document.querySelector('#answer').style.fontFamily =
       'Permanent Marker, cursive';
     document.querySelector('#answer').style.fontSize = '18px';
@@ -199,5 +199,5 @@ document.querySelector('.again').addEventListener('click', function () {
 
   document.querySelector('#answer').textContent = "Here you'll see the answer";
   document.querySelector('#answer').style.fontFamily = 'Kanit';
-  document.querySelector('#answer').style.color = '#ffe4c4';
+  document.querySelector('#answer').style.color = '#0363a3';
 });
