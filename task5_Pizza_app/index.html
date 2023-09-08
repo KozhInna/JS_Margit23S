@@ -166,12 +166,13 @@
       <form>
         <fieldset>
           <legend>Please select preferred way of delivery:</legend>
+          <select name="deliverMethod" id="select" required>
+            <option></option>
+            <option value="home">Home delivery</option>
+            <option value="restaurant">Eat in a restaurant</option>
+            <option value="pickup">Pickup at a restaurant</option>
+          </select>
         </fieldset>
-        <select name="deliverMethod" id="select" required>
-          <option>Home delivery</option>
-          <option>Eat in a restaurant</option>
-          <option>Pickup at a restaurant</option>
-        </select>
       </form>
 
       <!-- form will enable customers to personalize their pizza orders and calculate the total cost based on their choices. Display the updated price on the webpage to see price change/update on each choice. -->
