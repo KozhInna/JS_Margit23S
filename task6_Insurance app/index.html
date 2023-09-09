@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Insurance app</title>
+  </head>
+  <body>
+    <header>
+      <h1>Find out your insurance riskscore</h1>
+      <p>
+        This form will help you to calculate your score. Please enter the
+        requered information below.
+      </p>
+    </header>
+    <main>
+      <!-- 1. Name: - input field -->
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="e.g. Inna" />
+      </div>
+
+      <!-- 2. Age: - input. -->
+      <div>
+        <label for="age">Age</label>
+        <input type="text" id="age" placeholder="e.g. 40" />
+      </div>
+
+      <!-- 3. Current Health: Checkboxes. select one or more of the following
+options: - Hypertension - High Blood Sugar - Overweight. -->
+      <form>
+        <fieldset>
+          <legend>
+            How would you describe your current health. Please choose one or
+            more below.
+          </legend>
+          <div>
+            <input
+              class="health"
+              type="checkbox"
+              name="curHealth"
+              id="hypertension"
+              value="hypertension"
+            />
+            <lable for="hypertension">Hypertension</lable>
+          </div>
+
+          <div>
+            <input
+              class="health"
+              type="checkbox"
+              name="curHealth"
+              id="bloodSugar"
+              value="bloodSugar"
+            />
+            <lable for="bloodSugar">High Blood Sugar</lable>
+          </div>
+
+          <div>
+            <input
+              class="health"
+              type="checkbox"
+              name="curHealth"
+              id="overweight"
+              value="overweight"
+            />
+            <lable for="overweight">Overweight</lable>
+          </div>
+        </fieldset>
+      </form>
+
+      <!-- 4. Habits: Checkboxes. -->
+      <h3>
+        Pleae tell us about your habits. You can select one or more of the
+        following options:
+      </h3>
+      <form>
+        <!-- Good Health Habits -->
+        <fieldset>
+          <legend>Good Health Habits:</legend>
+          <div>
+            <input
+              class="goodHabit"
+              type="checkbox"
+              name="goodHabit"
+              id="regExercise"
+              value="regExercise"
+            />
+            <lable for="regExercise"
+              >Regular Exercise: Engaging in physical activity and exercise on a
+              regular basis.</lable
+            >
+          </div>
+
+          <div>
+            <input
+              class="goodHabit"
+              type="checkbox"
+              name="goodHabit"
+              id="healthDiet"
+              value="healthDiet"
+            />
+            <lable for="healthDiet"
+              >Healthy Diet: Maintaining a balanced and nutritious diet.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="goodHabit"
+              type="checkbox"
+              name="goodHabit"
+              id="adeqSleep"
+              value="adeqSleep"
+            />
+            <lable for="adeqSleep"
+              >Adequate Sleep: Ensuring you get enough restful sleep each
+              night.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="goodHabit"
+              type="checkbox"
+              name="goodHabit"
+              id="stressManage"
+              value="stressManage"
+            />
+            <lable for="stressManage"
+              >Stress Management: Practicing stress-reduction techniques such as
+              meditation or yoga.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="goodHabit"
+              type="checkbox"
+              name="goodHabit"
+              id="moderateAlco"
+              value="moderateAlco"
+            />
+            <lable for="moderateAlco"
+              >Moderate Alcohol Consumption: Consuming alcohol in moderation, if
+              at all.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="goodHabit"
+              type="checkbox"
+              name="goodHabit"
+              id="nonSmoke"
+              value="nonSmoke"
+            />
+            <lable for="nonSmoke"
+              >Non-Smoking: Not smoking or using tobacco products.</lable
+            >
+          </div>
+        </fieldset>
+
+        <!-- Unhealthy Habits -->
+        <fieldset>
+          <legend>Unhealthy Habits:</legend>
+          <div>
+            <input
+              class="badHabit"
+              type="checkbox"
+              name="badHabit"
+              id="smoking"
+              value="smoking"
+            />
+            <lable for="smoking"
+              >Smoking: Regularly smoking cigarettes or using tobacco
+              products.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="badHabit"
+              type="checkbox"
+              name="badHabit"
+              id="exerciseAlco"
+              value="exerciseAlco"
+            />
+            <lable for="exerciseAlco"
+              >Excessive Alcohol Consumption: Consuming alcohol in large
+              quantities or frequently.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="badHabit"
+              type="checkbox"
+              name="badHabit"
+              id="lackExercise"
+              value="lackExercise"
+            />
+            <lable for="lackExercise"
+              >Lack of Exercise: Leading a sedentary lifestyle with little to no
+              physical activity.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="badHabit"
+              type="checkbox"
+              name="badHabit"
+              id="poorDiet"
+              value="poorDiet"
+            />
+            <lable for="poorDiet"
+              >Poor Diet: Consistently consuming unhealthy foods high in sugar,
+              fats, and processed ingredients.</lable
+            >
+          </div>
+          <div>
+            <input
+              class="badHabit"
+              type="checkbox"
+              name="badHabit"
+              id="inadeqSleep"
+              value="inadeqSleep"
+            />
+            <lable for="inadeqSleep"
+              >Inadequate Sleep: Not getting enough sleep or having irregular
+              sleep patterns.</lable
+            >
+          </div>
+        </fieldset>
+      </form>
+    </main>
+    <div class="riskscore">Your current riskscore:</div>
+    <script src="main.js"></script>
+  </body>
+</html>
