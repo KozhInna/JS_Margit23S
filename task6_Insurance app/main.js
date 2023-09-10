@@ -8,7 +8,10 @@ const firstName = document.querySelector('#name');
 const age = document.querySelector('#age');
 const score = document.querySelector('.riskscore');
 const baseScore = 500;
+let agebasedScore = 0;
 let totalScore = 0;
+let habitPlus = 0;
+let habitMinus = 0;
 //console.log(typeof firstName, typeof age);
 
 /* greet user */
@@ -23,82 +26,114 @@ age.addEventListener('change', function () {
 
   /* group 0 - 17 */
   if (ageNum < 18) {
-    totalScore = baseScore;
+    agebasedScore = baseScore;
     score.textContent =
-      firstName.value +
-      '! ' +
       'Your insurance riskscore based only on the age is ' +
-      totalScore +
+      agebasedScore +
       '.';
     /* group 18-25 -> + 10% */
   } else if (ageNum >= 18 && ageNum <= 25) {
-    totalScore = baseScore + (baseScore * 10) / 100;
+    agebasedScore = baseScore + (baseScore * 10) / 100;
     score.textContent =
-      firstName.value +
-      '! ' +
       'Your insurance riskscore based only on the age is ' +
-      totalScore +
+      agebasedScore +
       '.';
     /* 26-35 -> + 30% */
   } else if (ageNum >= 26 && ageNum <= 35) {
-    totalScore = baseScore + (baseScore * 30) / 100;
+    agebasedScore = baseScore + (baseScore * 30) / 100;
     score.textContent =
-      firstName.value +
-      '! ' +
       'Your insurance riskscore based only on the age is ' +
-      totalScore +
+      agebasedScore +
       '.';
     /* 36-45 -> +60% */
   } else if (ageNum >= 36 && ageNum <= 45) {
-    totalScore = baseScore + (baseScore * 60) / 100;
+    agebasedScore = baseScore + (baseScore * 60) / 100;
     score.textContent =
-      firstName.value +
-      '! ' +
       'Your insurance riskscore based only on the age is ' +
-      totalScore +
+      agebasedScore +
       '.';
     /* 46-55 -> +100% */
   } else if (ageNum >= 46 && ageNum <= 55) {
-    totalScore = baseScore + (baseScore * 100) / 100;
+    agebasedScore = baseScore + (baseScore * 100) / 100;
     score.textContent =
-      firstName.value +
-      '! ' +
       'Your insurance riskscore based only on the age is ' +
-      totalScore +
+      agebasedScore +
       '.';
     /* 56-65 -> +150% */
   } else if (ageNum >= 56 && ageNum <= 65) {
-    totalScore = baseScore + (baseScore * 150) / 100;
+    agebasedScore = baseScore + (baseScore * 150) / 100;
     score.textContent =
-      firstName.value +
-      '! ' +
       'Your insurance riskscore based only on the age is ' +
-      totalScore +
+      agebasedScore +
       '.';
     /* 66+ -> +210% */
   } else if (ageNum >= 66 && ageNum <= 123) {
-    totalScore = baseScore + (baseScore * 210) / 100;
+    agebasedScore = baseScore + (baseScore * 210) / 100;
     score.textContent =
-      firstName.value +
-      '! ' +
       'Your insurance riskscore based only on the age is ' +
-      totalScore +
+      agebasedScore +
       '.';
     /* check if it's a correct age number */
   } else {
-    score.textContent =
-      firstName.value +
-      '! ' +
-      'Please check if you entered your age correctly.';
+    score.textContent = 'Please check if you entered your age correctly.';
   }
 });
 
-/* Extra for Current Health */
+/* Extra for Current Health - Increase of 1% per score */
 const healthIssues = document.querySelectorAll('.health');
 let extraForHealth = 0;
 
+function changeScore() {
+  let count = 0;
+  let checkboxElems = document.getElementsByTagName('input');
+  for (let i = 0; i < checkboxElems.length; i++) {
+    if (
+      checkboxElems[i].type === 'checkbox' &&
+      checkboxElems[i].checked === true
+    ) {
+      count++;
+    }
+  }
+  return count;
+}
+
+/* for "click" event in a checkbox current health */
 healthIssues.forEach((issue) => {
-  issue.addEventListener('click', () => {
+  issue.addEventListener('click', changeScore);
+  let clickCount = 0;
+
+  if (agebasedScore != 0) {
+    if (clickCount === 1) {
+      extraForHealth = (agebasedScore * 1) / 100;
+      totalScore = agebasedScore + extraForHealth;
+      score.textContent =
+        'You current riskscore based on the entered inforamtion is ' +
+        totalScore;
+    } else if (clickCount === 2) {
+      extraForHealth = (agebasedScore * 2) / 100;
+      totalScore = agebasedScore + extraForHealth;
+      score.textContent =
+        'You current riskscore based on the entered inforamtion is ' +
+        totalScore;
+    } else if (clickCount === 3) {
+      extraForHealth = (agebasedScore * 3) / 100;
+      totalScore = agebasedScore + extraForHealth;
+      score.textContent =
+        'You current riskscore based on the entered inforamtion is ' +
+        totalScore;
+    } else {
+      score.textContent =
+        'You current riskscore based on the entered inforamtion is ' +
+        agebasedScore;
+    }
+  } else {
+    score.textContent = 'Please enter your age.';
+  }
+});
+
+/* for "change" event in a checkbox current health */
+healthIssues.forEach((issue) => {
+  issue.addEventListener('change', () => {
     let count = 0;
     let checkboxElems = document.getElementsByTagName('input');
     for (let i = 0; i < checkboxElems.length; i++) {
@@ -109,20 +144,32 @@ healthIssues.forEach((issue) => {
         count++;
       }
     }
+
     // console.log(count);
 
-    if (totalScore != 0) {
+    if (agebasedScore != 0) {
       if (count === 1) {
-        extraForHealth = (500 * 1) / 100;
-        score.textContent = totalScore + extraForHealth;
+        extraForHealth = (agebasedScore * 1) / 100;
+        totalScore = agebasedScore + extraForHealth;
+        score.textContent =
+          'You current riskscore based on the entered inforamtion is ' +
+          totalScore;
       } else if (count === 2) {
-        extraForHealth = (500 * 2) / 100;
-        score.textContent = totalScore + extraForHealth;
+        extraForHealth = (agebasedScore * 2) / 100;
+        totalScore = agebasedScore + extraForHealth;
+        score.textContent =
+          'You current riskscore based on the entered inforamtion is ' +
+          totalScore;
       } else if (count === 3) {
-        extraForHealth = (500 * 3) / 100;
-        score.textContent = totalScore + extraForHealth;
+        extraForHealth = (agebasedScore * 3) / 100;
+        totalScore = agebasedScore + extraForHealth;
+        score.textContent =
+          'You current riskscore based on the entered inforamtion is ' +
+          totalScore;
       } else {
-        score.textContent = totalScore;
+        score.textContent =
+          'You current riskscore based on the entered inforamtion is ' +
+          agebasedScore;
       }
     } else {
       score.textContent = 'Please enter your age.';
@@ -132,45 +179,55 @@ healthIssues.forEach((issue) => {
 
 // - 5% for each Good habits
 const goodHabits = document.querySelectorAll('.goodHabit');
-let habitReduce = 0;
 
 goodHabits.forEach((goodHabit) => {
   goodHabit.addEventListener('click', () => {
     let checkboxElems = document.getElementsByTagName('input');
     let count = 0;
-    for (let i = 0; i < checkboxElems.length; i++) {
-      if (
-        checkboxElems[i].type === 'checkbox' &&
-        checkboxElems[i].checked === true
-      ) {
-        count++;
+    if (age.value) {
+      for (let i = 0; i < checkboxElems.length; i++) {
+        if (
+          checkboxElems[i].type === 'checkbox' &&
+          checkboxElems[i].checked === true
+        ) {
+          count++;
+        }
       }
+      //console.log(count);
+
+      habitMinus = ((agebasedScore * 5) / 100) * count;
+      score.textContent =
+        'You current riskscore based on the entered inforamtion is ' +
+        (agebasedScore - habitMinus);
+      //console.log(habitReduce);
+    } else {
+      score.textContent = 'Please enter your age.';
     }
-    console.log(count);
-    habitReduce = ((500 * 5) / 100) * count;
-    score.textContent = totalScore - habitReduce;
-    //console.log(habitReduce);
   });
 });
 /* +5% - for each Bad habit */
 const badHabits = document.querySelectorAll('.badHabit');
-let habitIncrise = 0;
 
 badHabits.forEach((badHabit) => {
   badHabit.addEventListener('click', () => {
     let checkboxElems = document.getElementsByTagName('input');
     let count = 0;
-    for (let i = 0; i < checkboxElems.length; i++) {
-      if (
-        checkboxElems[i].type === 'checkbox' &&
-        checkboxElems[i].checked === true
-      ) {
-        count++;
+    if (age.value) {
+      for (let i = 0; i < checkboxElems.length; i++) {
+        if (
+          checkboxElems[i].type === 'checkbox' &&
+          checkboxElems[i].checked === true
+        ) {
+          count++;
+        }
       }
+      console.log(count);
+      habitPlus = ((agebasedScore * 5) / 100) * count;
+      score.textContent =
+        'You current riskscore based on the entered inforamtion is ' +
+        (agebasedScore + habitPlus);
+    } else {
+      score.textContent = 'Please enter your age.';
     }
-    console.log(count);
-    habitIncrise = ((500 * 5) / 100) * count;
-    score.textContent = totalScore + habitIncrise;
-    //console.log(habitReduce);
   });
 });
