@@ -15,12 +15,14 @@ let habitMinus = 0;
 //console.log(typeof firstName, typeof age);
 
 /* greet user */
-firstName.addEventListener('change', function () {
-  //console.log(firstName.value);
+const greeting = () => {
   score.textContent =
     'Hello, ' + firstName.value + '!' + ' Please enter your age.';
-});
-age.addEventListener('change', function () {
+};
+firstName.addEventListener('change', greeting);
+
+/* function to calculate age based score */
+const ageScoreCalc = () => {
   let ageNum = Number(age.value);
   // console.log(typeof age.value);
 
@@ -73,49 +75,41 @@ age.addEventListener('change', function () {
       'Your insurance riskscore based only on the age is ' +
       agebasedScore +
       '.';
-    /* check if it's a correct age number */
   } else {
     score.textContent = 'Please check if you entered your age correctly.';
   }
-});
+};
+
+/* calculate the age based score */
+age.addEventListener('change', ageScoreCalc);
 
 /* Extra for Current Health - Increase of 1% per score */
-const healthIssues = document.querySelectorAll('.health');
+const healthIssues = document.querySelectorAll('input[name=curHealth]');
 let extraForHealth = 0;
 
-function changeScore() {
+const countClicks = () => {
   let count = 0;
-  let checkboxElems = document.getElementsByTagName('input');
-  for (let i = 0; i < checkboxElems.length; i++) {
-    if (
-      checkboxElems[i].type === 'checkbox' &&
-      checkboxElems[i].checked === true
-    ) {
+  for (const item of healthIssues) {
+    if (item.checked === true) {
       count++;
+      console.log(count);
     }
   }
-  return count;
-}
-
-/* for "click" event in a checkbox current health */
-healthIssues.forEach((issue) => {
-  issue.addEventListener('click', changeScore);
-  let clickCount = 0;
 
   if (agebasedScore != 0) {
-    if (clickCount === 1) {
+    if (count === 1) {
       extraForHealth = (agebasedScore * 1) / 100;
       totalScore = agebasedScore + extraForHealth;
       score.textContent =
         'You current riskscore based on the entered inforamtion is ' +
         totalScore;
-    } else if (clickCount === 2) {
+    } else if (count === 2) {
       extraForHealth = (agebasedScore * 2) / 100;
       totalScore = agebasedScore + extraForHealth;
       score.textContent =
         'You current riskscore based on the entered inforamtion is ' +
         totalScore;
-    } else if (clickCount === 3) {
+    } else if (count === 3) {
       extraForHealth = (agebasedScore * 3) / 100;
       totalScore = agebasedScore + extraForHealth;
       score.textContent =
@@ -129,10 +123,32 @@ healthIssues.forEach((issue) => {
   } else {
     score.textContent = 'Please enter your age.';
   }
-});
+};
+
+for (const item of healthIssues) {
+  item.addEventListener('click', countClicks);
+}
+
+/* function changeScore() {
+  let count = 0;
+  let checkboxElems = document.getElementsByTagName('input');
+  for (let i = 0; i < checkboxElems.length; i++) {
+    if (
+      checkboxElems[i].name === 'curHealth' &&
+      checkboxElems[i].checked === true
+    ) {
+      count++;
+    }
+  }
+  return count;
+} */
+
+/* for "click" event in a checkbox current health */
+/* healthIssues.forEach((issue) => {
+  issue.addEventListener('click', countClicks)); */
 
 /* for "change" event in a checkbox current health */
-healthIssues.forEach((issue) => {
+/* healthIssues.forEach((issue) => {
   issue.addEventListener('change', () => {
     let count = 0;
     let checkboxElems = document.getElementsByTagName('input');
@@ -143,11 +159,11 @@ healthIssues.forEach((issue) => {
       ) {
         count++;
       }
-    }
+    } */
 
-    // console.log(count);
+// console.log(count);
 
-    if (agebasedScore != 0) {
+/*   if (agebasedScore != 0) {
       if (count === 1) {
         extraForHealth = (agebasedScore * 1) / 100;
         totalScore = agebasedScore + extraForHealth;
@@ -175,7 +191,7 @@ healthIssues.forEach((issue) => {
       score.textContent = 'Please enter your age.';
     }
   });
-});
+}); */
 
 // - 5% for each Good habits
 const goodHabits = document.querySelectorAll('.goodHabit');
@@ -196,6 +212,7 @@ goodHabits.forEach((goodHabit) => {
       //console.log(count);
 
       habitMinus = ((agebasedScore * 5) / 100) * count;
+      console.log(habitMinus);
       score.textContent =
         'You current riskscore based on the entered inforamtion is ' +
         (agebasedScore - habitMinus);

@@ -16,7 +16,7 @@ body {
   height: 100%;
 }
 .container {
-  width: 70%;
+  width: 80%;
   margin: 50px auto;
 }
 .orderSection {
@@ -50,11 +50,20 @@ h1 {
 }
 .orderChoices {
   padding: 10px 5px;
+  font-size: 20px;
 }
 legend {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 25px;
 }
 .deliveryOptions {
   font-family: inherit;
+  font-size: inherit;
+}
+label {
+  margin-right: 15px;
+}
+span {
+  white-space: nowrap;
+  display: inline-block;
 }
