@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Kanit:wght@300;400&family=Lato&family=Permanent+Marker&family=Unbounded:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
     <title>Pizza ordering app</title>
   </head>
   <body>
@@ -167,7 +171,12 @@
         <form class="orderSection">
           <fieldset class="orderChoices">
             <legend>Please select preferred way of delivery:</legend>
-            <select name="deliverMethod" id="select" required>
+            <select
+              class="deliveryOptions"
+              name="deliverMethod"
+              id="select"
+              required
+            >
               <option></option>
               <option value="home">Home delivery</option>
               <option value="restaurant">Eat in a restaurant</option>
