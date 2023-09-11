@@ -7,179 +7,178 @@
     <title>Pizza ordering app</title>
   </head>
   <body>
-    <header>
-      <h1>Welcome to our pizza world</h1>
-      <div class="price">Price</div>
-    </header>
+    <div class="container">
+      <header>
+        <h1>Welcome to our pizza world</h1>
+        <div class="price">Price</div>
+      </header>
 
-    <main>
-      <!-- pizza size - radio buttons (2,4,6,8 servings) 
+      <main>
+        <!-- pizza size - radio buttons (2,4,6,8 servings) 
       price 2 -7,50€, 4 - 10,50€, 6 - 12,50€, 8 15,50€ -->
 
-      <form>
-        <fieldset>
-          <legend>Please select preferred pizza size:</legend>
-          <div>
-            <input
-              class="size"
-              type="radio"
-              id="sizeFor2"
-              value="serve2"
-              name="pizzaSize"
-            />
-            <label for="sizeFor2">Serving portion for 2</label>
+        <form class="orderSection">
+          <fieldset>
+            <legend>Please select preferred pizza size:</legend>
+            <div class="orderChoices">
+              <input
+                class="size"
+                type="radio"
+                id="sizeFor2"
+                value="serve2"
+                name="pizzaSize"
+              />
+              <label for="sizeFor2">Serving portion for 2</label>
 
-            <input
-              class="size"
-              type="radio"
-              id="sizeFor4"
-              value="serve4"
-              name="pizzaSize"
-            />
-            <label for="sizeFor4">Serving portion for 4</label>
+              <input
+                class="size"
+                type="radio"
+                id="sizeFor4"
+                value="serve4"
+                name="pizzaSize"
+              />
+              <label for="sizeFor4">Serving portion for 4</label>
 
-            <input
-              class="size"
-              type="radio"
-              id="sizeFor6"
-              value="serve6"
-              name="pizzaSize"
-            />
-            <label for="sizeFor6">Serving portion for 6</label>
+              <input
+                class="size"
+                type="radio"
+                id="sizeFor6"
+                value="serve6"
+                name="pizzaSize"
+              />
+              <label for="sizeFor6">Serving portion for 6</label>
 
-            <input
-              class="size"
-              type="radio"
-              id="sizeFor8"
-              value="serve8"
-              name="pizzaSize"
-            />
-            <label for="sizeFor8">Serving portion for 8</label>
-          </div>
-        </fieldset>
-      </form>
+              <input
+                class="size"
+                type="radio"
+                id="sizeFor8"
+                value="serve8"
+                name="pizzaSize"
+              />
+              <label for="sizeFor8">Serving portion for 8</label>
+            </div>
+          </fieldset>
+        </form>
 
-      <!-- pizza toppings - Checkboxes (ten different pizza
+        <!-- pizza toppings - Checkboxes (ten different pizza
       toppings, where the 1st - 4 are free, and additional toppings - a €0.50
       charge each.) -->
 
-      <form>
-        <fieldset>
-          <legend>Please select preferred pizza toppings:</legend>
-          <div>
-            <input
-              class="topping"
-              type="checkbox"
-              id="topCheese"
-              name="topping"
-              value="extraCheese"
-            />
-            <label for="topCheese">Extra cheese</label>
+        <form class="orderSection">
+          <fieldset>
+            <legend>Please select preferred pizza toppings:</legend>
+            <div class="orderChoices">
+              <input
+                class="topping"
+                type="checkbox"
+                id="topCheese"
+                name="topping"
+                value="extraCheese"
+              />
+              <label for="topCheese">Extra cheese</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topSausage"
-              name="topping"
-              value="sausage"
-            />
-            <label for="topSausage">Sausage</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topSausage"
+                name="topping"
+                value="sausage"
+              />
+              <label for="topSausage">Sausage</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topOnion"
-              name="topping"
-              value="onion"
-            />
-            <label for="topOnion">Onion</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topOnion"
+                name="topping"
+                value="onion"
+              />
+              <label for="topOnion">Onion</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topOlives"
-              name="topping"
-              value="olives"
-            />
-            <label for="topOlives">Olives</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topOlives"
+                name="topping"
+                value="olives"
+              />
+              <label for="topOlives">Olives</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topPepper"
-              name="topping"
-              value="greenPepper"
-            />
-            <label for="topPepper">Green pepper</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topPepper"
+                name="topping"
+                value="greenPepper"
+              />
+              <label for="topPepper">Green pepper</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topGarlic"
-              name="topping"
-              value="garlic"
-            />
-            <label for="topGarlic">Garlic</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topGarlic"
+                name="topping"
+                value="garlic"
+              />
+              <label for="topGarlic">Garlic</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topTomato"
-              name="topping"
-              value="tomato"
-            />
-            <label for="topTomato">Tomato</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topTomato"
+                name="topping"
+                value="tomato"
+              />
+              <label for="topTomato">Tomato</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topBasil"
-              name="topping"
-              value="basil"
-            />
-            <label for="topBasil">Basil</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topBasil"
+                name="topping"
+                value="basil"
+              />
+              <label for="topBasil">Basil</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topMushrooms"
-              name="topping"
-              value="mushrooms"
-            />
-            <label for="topMushrooms">Mushrooms</label>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topMushrooms"
+                name="topping"
+                value="mushrooms"
+              />
+              <label for="topMushrooms">Mushrooms</label>
 
-            <input
-              class="topping"
-              type="checkbox"
-              id="topPineapple"
-              name="topping"
-              value="pineapple"
-            />
-            <label for="topPineapple">Pineapple</label>
-          </div>
-        </fieldset>
-      </form>
+              <input
+                class="topping"
+                type="checkbox"
+                id="topPineapple"
+                name="topping"
+                value="pineapple"
+              />
+              <label for="topPineapple">Pineapple</label>
+            </div>
+          </fieldset>
+        </form>
 
-      <!-- deliver options - dropdown menu Delivery home, +5€ Eat in
+        <!-- deliver options - dropdown menu Delivery home, +5€ Eat in
       Pickup food -->
 
-      <form>
-        <fieldset>
-          <legend>Please select preferred way of delivery:</legend>
-          <select name="deliverMethod" id="select" required>
-            <option></option>
-            <option value="home">Home delivery</option>
-            <option value="restaurant">Eat in a restaurant</option>
-            <option value="pickup">Pickup at a restaurant</option>
-          </select>
-        </fieldset>
-      </form>
+        <form class="orderSection">
+          <fieldset class="orderChoices">
+            <legend>Please select preferred way of delivery:</legend>
+            <select name="deliverMethod" id="select" required>
+              <option></option>
+              <option value="home">Home delivery</option>
+              <option value="restaurant">Eat in a restaurant</option>
+              <option value="pickup">Pickup at a restaurant</option>
+            </select>
+          </fieldset>
+        </form>
 
-      <!-- form will enable customers to personalize their pizza orders and calculate the total cost based on their choices. Display the updated price on the webpage to see price change/update on each choice. -->
-    </main>
-
-    <footer></footer>
-
+        <!-- form will enable customers to personalize their pizza orders and calculate the total cost based on their choices. Display the updated price on the webpage to see price change/update on each choice. -->
+      </main>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
