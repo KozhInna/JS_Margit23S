@@ -128,6 +128,7 @@ let randomNumber = Math.floor(Math.random() * 10) + 1;
 document.querySelector('.btn').addEventListener('click', function () {
   let name = document.querySelector('#firstName').value;
   let question = document.querySelector('#question').value;
+  let answer = document.querySelector('#answer');
 
   let answerText;
   let greeting;
@@ -176,20 +177,18 @@ document.querySelector('.btn').addEventListener('click', function () {
   if (name.length > 0) {
     name = name.toUpperCase();
     greeting = `Hello, ${name}.`;
-    document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
-    document.querySelector('#answer').style.color = '#503b2e';
-    document.querySelector('#answer').style.fontFamily =
-      'Permanent Marker, cursive';
-    document.querySelector('#answer').style.fontSize = '18px';
-    document.querySelector('#answer').style.lineHeight = '1.7';
+    answer.textContent = `${greeting} ${answerText}`;
+    answer.style.color = '#503b2e';
+    answer.style.fontFamily = 'Permanent Marker, cursive';
+    answer.style.fontSize = '18px';
+    answer.style.lineHeight = '1.7';
   } else {
     greeting = 'Hello.';
-    document.querySelector('#answer').textContent = `${greeting} ${answerText}`;
-    document.querySelector('#answer').style.color = '#503b2e';
-    document.querySelector('#answer').style.fontFamily =
-      'Permanent Marker, cursive';
-    document.querySelector('#answer').style.fontSize = '18px';
-    document.querySelector('#answer').style.lineHeight = '1.7';
+    answer.textContent = `${greeting} ${answerText}`;
+    answer.style.color = '#503b2e';
+    answer.style.fontFamily = 'Permanent Marker, cursive';
+    answer.style.fontSize = '18px';
+    answer.style.lineHeight = '1.7';
   }
 });
 /* When a person has several questions - use Ask btn */
@@ -197,7 +196,7 @@ document.querySelector('.again').addEventListener('click', function () {
   randomNumber = Math.floor(Math.random() * 10) + 1;
   document.querySelector('#question').value = '';
 
-  document.querySelector('#answer').textContent = "Here you'll see the answer";
-  document.querySelector('#answer').style.fontFamily = 'Kanit';
-  document.querySelector('#answer').style.color = '#0363a3';
+  answer.textContent = "Here you'll see the answer";
+  answer.style.fontFamily = 'Kanit';
+  answer.style.color = '#0363a3';
 });
