@@ -18,7 +18,10 @@ const text = 'You current riskscore based on the entered inforamtion is ';
 /* greet user */
 const greeting = () => {
   score.textContent =
-    'Hello, ' + firstName.value + '!' + ' Please enter your age.';
+    'Hello, ' +
+    firstName.value +
+    '!' +
+    ' Calculations are based on age parameter. Please enter your age.';
 };
 firstName.addEventListener('change', greeting);
 
@@ -27,6 +30,12 @@ const ageScoreCalc = () => {
   let ageNum = Number(age.value);
   // console.log(typeof age.value);
 
+  //UNCHECK IF anything was checked before entering age
+  const checklists = document.getElementsByTagName('input');
+  for (let i = 0; i < checklists.length; i++) {
+    checklists[i].checked = false;
+  }
+
   /* group 0 - 17 */
   if (ageNum < 18) {
     agebasedScore = baseScore;
@@ -34,6 +43,7 @@ const ageScoreCalc = () => {
       'Your insurance riskscore based only on the age is ' +
       agebasedScore +
       '.';
+
     /* group 18-25 -> + 10% */
   } else if (ageNum >= 18 && ageNum <= 25) {
     agebasedScore = baseScore + (baseScore * 10) / 100;
@@ -90,7 +100,7 @@ const healthIssues = document.querySelectorAll('input[name=curHealth]');
 const countHealthClicks = () => {
   let count = 0;
   for (const item of healthIssues) {
-    if (item.checked === true) {
+    if (item.checked) {
       count++;
       console.log(count);
     }
@@ -109,21 +119,25 @@ const countHealthClicks = () => {
     scoreCurrentHealth = agebasedScore + extraForHealth - goodHabit + badHabit;
     score.textContent = text + scoreCurrentHealth;
   } else {
-    score.textContent = 'Please enter your age.';
+    score.textContent =
+      'Calculations are based on age parameter. Please enter your age.';
   }
 };
 
 for (const item of healthIssues) {
   item.addEventListener('change', countHealthClicks);
 }
+//checked pairs
 
 // - 5% for each Good habits
 const goodHabits = document.querySelectorAll('input[name=goodHabit]');
+const badHabits = document.querySelectorAll('input[name=badHabit]');
 
 const countGoodHabits = () => {
   let count = 0;
+
   for (const item of goodHabits) {
-    if (item.checked === true) {
+    if (item.checked) {
       count++;
     }
   }
@@ -132,7 +146,8 @@ const countGoodHabits = () => {
     score.textContent =
       text + (agebasedScore + extraForHealth - goodHabit + badHabit);
   } else {
-    score.textContent = 'Please enter your age.';
+    score.textContent =
+      'Calculations are based on age parameter. Please enter your age.';
   }
 };
 
@@ -141,12 +156,11 @@ for (const item of goodHabits) {
 }
 
 /* +5% - for each Bad habit */
-const badHabits = document.querySelectorAll('input[name=badHabit]');
 
 const countBadHabits = () => {
   let count = 0;
   for (const item of badHabits) {
-    if (item.checked === true) {
+    if (item.checked) {
       count++;
     }
   }
@@ -155,7 +169,8 @@ const countBadHabits = () => {
     score.textContent =
       text + (agebasedScore + extraForHealth - goodHabit + badHabit);
   } else {
-    score.textContent = 'Please enter your age.';
+    score.textContent =
+      'Calculations are based on age parameter. Please enter your age.';
   }
 };
 
