@@ -121,6 +121,7 @@ const countHealthClicks = () => {
   } else {
     score.textContent =
       'Calculations are based on age parameter. Please enter your age.';
+    age.style.boxShadow = '0 0 5px rgba(0, 157, 255, 1)';
   }
 };
 
@@ -148,6 +149,7 @@ const countGoodHabits = () => {
   } else {
     score.textContent =
       'Calculations are based on age parameter. Please enter your age.';
+    age.style.boxShadow = '0 0 5px rgba(0, 157, 255, 1)';
   }
 };
 
@@ -171,6 +173,7 @@ const countBadHabits = () => {
   } else {
     score.textContent =
       'Calculations are based on age parameter. Please enter your age.';
+    age.style.boxShadow = '0 0 5px rgba(0, 157, 255, 1)';
   }
 };
 
