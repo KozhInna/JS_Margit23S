@@ -9,9 +9,10 @@ const age = document.querySelector('#age');
 const score = document.querySelector('.riskscore');
 const baseScore = 500;
 let agebasedScore = 0;
-let totalScore = 0;
-let habitPlus = 0;
-let habitMinus = 0;
+let extraForHealth = 0;
+let goodHabit = 0;
+let badHabit = 0;
+const text = 'You current riskscore based on the entered inforamtion is ';
 //console.log(typeof firstName, typeof age);
 
 /* greet user */
@@ -85,9 +86,8 @@ age.addEventListener('change', ageScoreCalc);
 
 /* Extra for Current Health - Increase of 1% per score */
 const healthIssues = document.querySelectorAll('input[name=curHealth]');
-let extraForHealth = 0;
 
-const countClicks = () => {
+const countHealthClicks = () => {
   let count = 0;
   for (const item of healthIssues) {
     if (item.checked === true) {
@@ -95,156 +95,70 @@ const countClicks = () => {
       console.log(count);
     }
   }
-
+  let scoreCurrentHealth = 0;
   if (agebasedScore != 0) {
     if (count === 1) {
       extraForHealth = (agebasedScore * 1) / 100;
-      totalScore = agebasedScore + extraForHealth;
-      score.textContent =
-        'You current riskscore based on the entered inforamtion is ' +
-        totalScore;
     } else if (count === 2) {
       extraForHealth = (agebasedScore * 2) / 100;
-      totalScore = agebasedScore + extraForHealth;
-      score.textContent =
-        'You current riskscore based on the entered inforamtion is ' +
-        totalScore;
     } else if (count === 3) {
       extraForHealth = (agebasedScore * 3) / 100;
-      totalScore = agebasedScore + extraForHealth;
-      score.textContent =
-        'You current riskscore based on the entered inforamtion is ' +
-        totalScore;
-    } else {
-      score.textContent =
-        'You current riskscore based on the entered inforamtion is ' +
-        agebasedScore;
+    } else if (count === 0) {
+      extraForHealth = 0;
     }
+    scoreCurrentHealth = agebasedScore + extraForHealth - goodHabit + badHabit;
+    score.textContent = text + scoreCurrentHealth;
   } else {
     score.textContent = 'Please enter your age.';
   }
 };
 
 for (const item of healthIssues) {
-  item.addEventListener('click', countClicks);
+  item.addEventListener('change', countHealthClicks);
 }
 
-/* function changeScore() {
+// - 5% for each Good habits
+const goodHabits = document.querySelectorAll('input[name=goodHabit]');
+
+const countGoodHabits = () => {
   let count = 0;
-  let checkboxElems = document.getElementsByTagName('input');
-  for (let i = 0; i < checkboxElems.length; i++) {
-    if (
-      checkboxElems[i].name === 'curHealth' &&
-      checkboxElems[i].checked === true
-    ) {
+  for (const item of goodHabits) {
+    if (item.checked === true) {
       count++;
     }
   }
-  return count;
-} */
+  if (age.value) {
+    goodHabit = ((agebasedScore * 5) / 100) * count;
+    score.textContent =
+      text + (agebasedScore + extraForHealth - goodHabit + badHabit);
+  } else {
+    score.textContent = 'Please enter your age.';
+  }
+};
 
-/* for "click" event in a checkbox current health */
-/* healthIssues.forEach((issue) => {
-  issue.addEventListener('click', countClicks)); */
+for (const item of goodHabits) {
+  item.addEventListener('click', countGoodHabits);
+}
 
-/* for "change" event in a checkbox current health */
-/* healthIssues.forEach((issue) => {
-  issue.addEventListener('change', () => {
-    let count = 0;
-    let checkboxElems = document.getElementsByTagName('input');
-    for (let i = 0; i < checkboxElems.length; i++) {
-      if (
-        checkboxElems[i].type === 'checkbox' &&
-        checkboxElems[i].checked === true
-      ) {
-        count++;
-      }
-    } */
-
-// console.log(count);
-
-/*   if (agebasedScore != 0) {
-      if (count === 1) {
-        extraForHealth = (agebasedScore * 1) / 100;
-        totalScore = agebasedScore + extraForHealth;
-        score.textContent =
-          'You current riskscore based on the entered inforamtion is ' +
-          totalScore;
-      } else if (count === 2) {
-        extraForHealth = (agebasedScore * 2) / 100;
-        totalScore = agebasedScore + extraForHealth;
-        score.textContent =
-          'You current riskscore based on the entered inforamtion is ' +
-          totalScore;
-      } else if (count === 3) {
-        extraForHealth = (agebasedScore * 3) / 100;
-        totalScore = agebasedScore + extraForHealth;
-        score.textContent =
-          'You current riskscore based on the entered inforamtion is ' +
-          totalScore;
-      } else {
-        score.textContent =
-          'You current riskscore based on the entered inforamtion is ' +
-          agebasedScore;
-      }
-    } else {
-      score.textContent = 'Please enter your age.';
-    }
-  });
-}); */
-
-// - 5% for each Good habits
-const goodHabits = document.querySelectorAll('.goodHabit');
-
-goodHabits.forEach((goodHabit) => {
-  goodHabit.addEventListener('click', () => {
-    let checkboxElems = document.getElementsByTagName('input');
-    let count = 0;
-    if (age.value) {
-      for (let i = 0; i < checkboxElems.length; i++) {
-        if (
-          checkboxElems[i].type === 'checkbox' &&
-          checkboxElems[i].checked === true
-        ) {
-          count++;
-        }
-      }
-      //console.log(count);
-
-      habitMinus = ((agebasedScore * 5) / 100) * count;
-      console.log(habitMinus);
-      score.textContent =
-        'You current riskscore based on the entered inforamtion is ' +
-        (agebasedScore - habitMinus);
-      //console.log(habitReduce);
-    } else {
-      score.textContent = 'Please enter your age.';
-    }
-  });
-});
 /* +5% - for each Bad habit */
-const badHabits = document.querySelectorAll('.badHabit');
+const badHabits = document.querySelectorAll('input[name=badHabit]');
 
-badHabits.forEach((badHabit) => {
-  badHabit.addEventListener('click', () => {
-    let checkboxElems = document.getElementsByTagName('input');
-    let count = 0;
-    if (age.value) {
-      for (let i = 0; i < checkboxElems.length; i++) {
-        if (
-          checkboxElems[i].type === 'checkbox' &&
-          checkboxElems[i].checked === true
-        ) {
-          count++;
-        }
-      }
-      console.log(count);
-      habitPlus = ((agebasedScore * 5) / 100) * count;
-      score.textContent =
-        'You current riskscore based on the entered inforamtion is ' +
-        (agebasedScore + habitPlus);
-    } else {
-      score.textContent = 'Please enter your age.';
+const countBadHabits = () => {
+  let count = 0;
+  for (const item of badHabits) {
+    if (item.checked === true) {
+      count++;
     }
-  });
-});
+  }
+  if (age.value) {
+    badHabit = ((agebasedScore * 5) / 100) * count;
+    score.textContent =
+      text + (agebasedScore + extraForHealth - goodHabit + badHabit);
+  } else {
+    score.textContent = 'Please enter your age.';
+  }
+};
+
+for (const item of badHabits) {
+  item.addEventListener('click', countBadHabits);
+}
