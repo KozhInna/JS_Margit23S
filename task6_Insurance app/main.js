@@ -21,7 +21,8 @@ const greeting = () => {
     'Hello, ' +
     firstName.value +
     '!' +
-    ' Calculations are based on age parameter. Please enter your age.';
+    ' Calculations are based on the age parameter. Please enter your age.';
+  age.style.boxShadow = '0 0 5px rgba(0, 157, 255, 1)';
 };
 firstName.addEventListener('change', greeting);
 
@@ -120,7 +121,7 @@ const countHealthClicks = () => {
     score.textContent = text + scoreCurrentHealth;
   } else {
     score.textContent =
-      'Calculations are based on age parameter. Please enter your age.';
+      'Calculations are based on the age parameter. Please enter your age.';
     age.style.boxShadow = '0 0 5px rgba(0, 157, 255, 1)';
   }
 };
@@ -148,7 +149,7 @@ const countGoodHabits = () => {
       text + (agebasedScore + extraForHealth - goodHabit + badHabit);
   } else {
     score.textContent =
-      'Calculations are based on age parameter. Please enter your age.';
+      'Calculations are based on the age parameter. Please enter your age.';
     age.style.boxShadow = '0 0 5px rgba(0, 157, 255, 1)';
   }
 };
@@ -172,7 +173,7 @@ const countBadHabits = () => {
       text + (agebasedScore + extraForHealth - goodHabit + badHabit);
   } else {
     score.textContent =
-      'Calculations are based on age parameter. Please enter your age.';
+      'Calculations are based on the age parameter. Please enter your age.';
     age.style.boxShadow = '0 0 5px rgba(0, 157, 255, 1)';
   }
 };

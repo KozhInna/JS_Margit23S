@@ -99,3 +99,6 @@ input[type='text']#name:hover {
 input[type='text']#age:hover {
   box-shadow: inset 0 -3px 0 #009dff;
 }
+input:focus {
+  background-color: rgb(156, 212, 234, 0.2);
+}
