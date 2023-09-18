@@ -1,5 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-image: linear-gradient(red, rgb(22, 19, 193));
+  background-image: linear-gradient(red, rgb(19, 193, 57));
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.color1,
+.color2 {
+  display: inline-block;
+  border: none;
 }
