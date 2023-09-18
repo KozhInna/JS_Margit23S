@@ -8,93 +8,110 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono"
+      rel="stylesheet"
+    />
     <title>Gradient</title>
   </head>
   <body>
     <form>
       <h1>Linear gradient generator</h1>
       <h2>Colors</h2>
-      <input class="color1" type="color" name="color1" value="#ff0000" />
-      <input class="color2" type="color" name="color2" value="#74009e" />
+      <div class="colors-box">
+        <input class="color1" type="color" name="color1" value="#ff0000" />
+        <input class="color2" type="color" name="color2" value="#1378c1" />
+      </div>
 
       <h2>Directions</h2>
-      <div class="directions">
-        <input
-          type="radio"
-          name="direction"
-          id="to_bottom_right"
-          value="to bottom right"
-        />
-        <label for="to_bottom_right"
-          ><span class="material-symbols-outlined">south_east</span></label
-        >
-      </div>
+      <div class="directions-conteiner1">
+        <div class="directions">
+          <input
+            type="radio"
+            name="direction"
+            id="to_bottom_right"
+            value="to bottom right"
+            checked
+          />
+          <label for="to_bottom_right"
+            ><span class="material-symbols-outlined">south_east</span></label
+          >
+        </div>
 
-      <div class="directions">
-        <input type="radio" name="direction" id="to_bottom" value="to bottom" />
-        <label for="to_bottom"
-          ><span class="material-symbols-outlined">south</span></label
-        >
+        <div class="directions">
+          <input
+            type="radio"
+            name="direction"
+            id="to_bottom"
+            value="to bottom"
+          />
+          <label for="to_bottom"
+            ><span class="material-symbols-outlined">south</span></label
+          >
+        </div>
+        <div class="directions">
+          <input
+            type="radio"
+            name="direction"
+            id="to_bottom_left"
+            value="to bottom left"
+          />
+          <label for="to_bottom_left"
+            ><span class="material-symbols-outlined">south_west</span></label
+          >
+        </div>
       </div>
-      <div class="directions">
-        <input
-          type="radio"
-          name="direction"
-          id="to_bottom_left"
-          value="to bottom left"
-        />
-        <label for="to_bottom_left"
-          ><span class="material-symbols-outlined">south_west</span></label
-        >
-      </div>
-      <div class="directions">
-        <input type="radio" name="direction" id="to_right" value="to right" />
-        <label for="to_right"
-          ><span class="material-symbols-outlined">east</span></label
-        >
-      </div>
+      <div class="directions-conteiner1">
+        <div class="directions">
+          <input type="radio" name="direction" id="to_right" value="to right" />
+          <label for="to_right"
+            ><span class="material-symbols-outlined">east</span></label
+          >
+        </div>
 
-      <div class="directions empty">
-        <!-- <input type="radio" name="direction" id="empty" />
+        <div class="directions empty">
+          <!-- <input type="radio" name="direction" id="empty" />
       <label for="empty"><span class="material-symbols-outlined"></span></label> -->
+        </div>
+
+        <div class="directions">
+          <input type="radio" name="direction" id="to_left" value="to left" />
+          <label for="to_left"
+            ><span class="material-symbols-outlined">west</span></label
+          >
+        </div>
       </div>
 
-      <div class="directions">
-        <input type="radio" name="direction" id="to_left" value="to left" />
-        <label for="to_left"
-          ><span class="material-symbols-outlined">west</span></label
-        >
+      <div class="directions-conteiner3">
+        <div class="directions">
+          <input
+            type="radio"
+            name="direction"
+            id="to_top_right"
+            value="to top right"
+          />
+          <label for="to_top_right"
+            ><span class="material-symbols-outlined">north_east</span></label
+          >
+        </div>
+        <div class="directions">
+          <input type="radio" name="direction" id="to_top" value="to top" />
+          <label for="to_top"
+            ><span class="material-symbols-outlined">north</span></label
+          >
+        </div>
+        <div class="directions">
+          <input
+            type="radio"
+            name="direction"
+            id="to_top_left"
+            value="to top left"
+          />
+          <label for="to_top_left"
+            ><span class="material-symbols-outlined">north_west</span></label
+          >
+        </div>
       </div>
-
-      <div class="directions">
-        <input
-          type="radio"
-          name="direction"
-          id="to_top_right"
-          value="to top right"
-        />
-        <label for="to_top_right"
-          ><span class="material-symbols-outlined">north_east</span></label
-        >
-      </div>
-      <div class="directions">
-        <input type="radio" name="direction" id="to_top" value="to top" />
-        <label for="to_top"
-          ><span class="material-symbols-outlined">north</span></label
-        >
-      </div>
-      <div class="directions">
-        <input
-          type="radio"
-          name="direction"
-          id="to_top_left"
-          value="to top left"
-        />
-        <label for="to_top_left"
-          ><span class="material-symbols-outlined">north_west</span></label
-        >
-      </div>
-
       <h2>CSS code</h2>
       <p class="code">Code will be here</p>
     </form>
