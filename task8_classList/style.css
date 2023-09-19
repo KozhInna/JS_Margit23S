@@ -15,8 +15,13 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-
+  position: relative;
   align-items: center;
+  position: sticky;
+  top: 0;
+}
+.bg {
+  background-color: white;
 }
 li {
   display: inline-block;
@@ -25,6 +30,9 @@ section,
 footer,
 header {
   padding: 1rem;
+}
+section {
+  scroll-margin-top: 60px;
 }
 p {
   margin: 0.5rem 0;
@@ -39,9 +47,39 @@ p {
   background-color: #5b44a2;
   color: #fff;
 }
+.mobile {
+  display: none;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
 #backToTop {
   display: none;
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+}
+/* do smth at this breakpoint */
+@media (max-width: 800px) {
+  body {
+    background-color: pink;
+  }
+  nav ul {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  ul.responsive {
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+  }
+  ul.responsive li {
+    display: block;
+    margin: 1rem;
+  }
 }
