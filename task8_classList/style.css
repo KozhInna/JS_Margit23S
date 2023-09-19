@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Playfair Display", serif;
+  background-color: #a2446e;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+li {
+  display: inline-block;
+}
+section,
+footer,
+header {
+  padding: 1rem;
+}
+p {
+  margin: 0.5rem 0;
+}
+.btn {
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #5b44a2;
+  color: #fff;
+}
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
