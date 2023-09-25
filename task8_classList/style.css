@@ -10,7 +10,7 @@ html {
 }
 body {
   font-family: "Playfair Display", serif;
-  background-color: #a2446e;
+  background-color: #add3e6;
 }
 header {
   display: flex;
@@ -58,6 +58,51 @@ p {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+}
+/* modal window */
+.overlay {
+  /* position: absolute(not easy to fit with mobile version) OR fixed */
+  background-color: rgb(51, 51, 51, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  /* to put a window in a center of a window */
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.modal-window {
+  background-color: rgb(247, 247, 247);
+  max-width: 600px;
+  min-height: 300px;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 5px;
+  position: relative;
+}
+
+.x-btn {
+  background-color: #add3e6;
+  padding: 5px 10px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 3px;
+  font-weight: 900;
+}
+.no-press-btn {
+  font-family: inherit;
+  box-shadow: none;
+  border: none;
+  font-size: 15px;
+  background-color: white;
+  font-weight: 900;
+  padding: 10px 20px;
+}
+.overlay.visible {
+  display: flex;
 }
 /* do smth at this breakpoint */
 @media (max-width: 800px) {
