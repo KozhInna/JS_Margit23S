@@ -13,7 +13,6 @@ let extraForHealth = 0;
 let goodHabit = 0;
 let badHabit = 0;
 const text = 'You current riskscore based on the entered inforamtion is ';
-//console.log(typeof firstName, typeof age);
 
 /* greet user */
 const greeting = () => {
@@ -29,7 +28,6 @@ firstName.addEventListener('change', greeting);
 /* function to calculate age based score */
 const ageScoreCalc = () => {
   let ageNum = Number(age.value);
-  // console.log(typeof age.value);
 
   //UNCHECK IF anything was checked before entering age
   const checklists = document.getElementsByTagName('input');
@@ -103,7 +101,6 @@ const countHealthClicks = () => {
   for (const item of healthIssues) {
     if (item.checked) {
       count++;
-      console.log(count);
     }
   }
   let scoreCurrentHealth = 0;
@@ -129,7 +126,6 @@ const countHealthClicks = () => {
 for (const item of healthIssues) {
   item.addEventListener('change', countHealthClicks);
 }
-//checked pairs
 
 // - 5% for each Good habits
 const goodHabits = document.querySelectorAll('input[name=goodHabit]');
@@ -159,7 +155,6 @@ for (const item of goodHabits) {
 }
 
 /* +5% - for each Bad habit */
-
 const countBadHabits = () => {
   let count = 0;
   for (const item of badHabits) {
