@@ -23,7 +23,6 @@ sizes.forEach((size) => {
     document.querySelector('.price').textContent = totalCost;
   });
 });
-//console.log();
 
 /* Choosing toppings (Checkboxes) (first 4 - free, add. toppings - extra €0.50 per each)*/
 const toppings = document.querySelectorAll('.topping');
@@ -40,7 +39,6 @@ toppings.forEach((topping) => {
         count++;
       }
     }
-    // console.log(count);
 
     /* adding price per size to topping */
     if (count >= 4) {
